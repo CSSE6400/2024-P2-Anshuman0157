@@ -26,19 +26,19 @@ class Todo(db.Model):
     updated_at : datetime = db.Column(db.DateTime, nullable=False, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
 
 
-# This is a helper method to convert the model to a dictionary
-def to_dict(self):
-    return {
-        'id': self.id,
-        'title': self.title,
-        'description': self.description,
-        'completed': self.completed,
-        'deadline_at': self.deadline_at.isoformat() if self.deadline_at else None,
-        'created_at': self.created_at.isoformat() if self.created_at else None,
-        'updated_at': self.updated_at.isoformat() if self.updated_at else None,
-    }
+    # This is a helper method to convert the model to a dictionary
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'description': self.description,
+            'completed': self.completed,
+            'deadline_at': self.deadline_at.isoformat() if self.deadline_at else None,
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'updated_at': self.updated_at.isoformat() if self.updated_at else None,
+        }
 
-def __repr__(self):
-    return f'<Todo {self.id} {self.title}>'
+    def __repr__(self):
+        return f'<Todo {self.id} {self.title}>'
 
    
